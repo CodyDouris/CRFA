@@ -696,9 +696,9 @@ function renderGraph(dataArea, geography) {
       .range([0, graphWidth])
       .domain(cleanedGraphData.map(s => s.SDOH_Cat))
       .padding(0.5);
-  if(updateGraphToggle && cleanedGraphData.length > 0)
-    updateGraph()
-  else{
+//   if(updateGraphToggle && cleanedGraphData.length > 0)
+//     updateGraph()
+//   else{
   d3.select("#barGraph").remove();
   d3.selectAll(".barSvg text").remove();
   
@@ -785,7 +785,7 @@ function renderGraph(dataArea, geography) {
       .attr("x", a => xScale(a.SDOH_Cat) + xScale.bandwidth() / 2)
       .attr("y", a => yScale(a[asrCrudeToggle]) - 10)
       .text(a => a[asrCrudeToggle] + "%");
-}
+//}
 }
 d3.select("body").on("keydown", function() {
   zooming = d3.event.ctrlKey;
