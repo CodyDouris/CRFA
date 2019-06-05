@@ -1,0 +1,157 @@
+body {
+  font-family: Helvetica, Arial, Helvetica, sans-serif;
+  margin: 10px;
+}
+i {
+  font-size: 40px;
+}
+svg {
+  border: 1px solid #ddd;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #ebebeb;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #ebebeb;
+}
+span.label {
+  font-weight: bold;
+}
+select.input {
+  margin-top: 10px;
+  display: block;
+  width: 225px;
+}
+div.d-inline-block {
+  margin-left: 40px;
+}
+#dataSource {
+  font-size: 0.7em;
+}
+#ASR {
+  padding-left: 30px;
+}
+#infoDiv {
+  opacity: 0;
+  display: none;
+}
+#descriptionDiv {
+  opacity: 0;
+  display: none;
+}
+#CR {
+  padding-left: 30px;
+}
+#legend {
+  position: absolute;
+  z-index: 3;
+  font-size: 0.75em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+#legendTitle {
+  font-size: 1.5em;
+}
+#descriptionDiv {
+  position: relative;
+  float: right;
+  width: 25%;
+  font-size: 1.2em;
+}
+#selectedMap {
+  display: inline-block;
+}
+#descriptionDiv {
+  display: inline-block;
+}
+#tableTitle {
+  font-weight: normal;
+}
+#tableDiv {
+  overflow-y: auto;
+}
+#tableNotesDiv {
+  background: lightblue;
+}
+.tableNotes {
+  color: blue;
+}
+.selectedArea {
+  border: 1px dashed black;
+  stroke: black;
+  opacity: 0.35;
+}
+.fa-info-circle {
+  font-size: 20px;
+}
+.fa-angle-up {
+  color: green;
+}
+.fa-angle-down {
+  color: red;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 34px;
+}
+.container {
+  margin-top: 10px;
+  margin-left: 0px;
+}
+.parameters {
+  font-weight: bold;
+  color: green;
+}
+.wb-toggle {
+  font-weight: bold;
+  border: 1px lightgray solid;
+  width: auto;
+}
+.btn {
+  margin-bottom: 10px;
+}
+/*Switch CSS*/
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  font-weight: bold;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 34px;
+  width: 100px;
+  background-color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+}

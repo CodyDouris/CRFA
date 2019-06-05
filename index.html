@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Canadian Risk Factor Atlus</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+
+<body>
+	<h1>Canadian Risk Factor Atlas</h1>
+	<p>The Canadian Risk Factor Atlas is an interactive tool that presents prevalence estimates on key disease risk
+		factors at several geographic levels (e.g. National, by Province and Territories, Health Regions, Census Metropolitan
+		areas and more). For each indicator, estimates are disaggregated by four levels (i.e. by geography, by youth and
+		adults, by sex and by key socioeconomic determinants).</p>
+	<h3 class="parameters">Select your parameters below:</h3>
+	<div class="d-inline-block">
+		<span class="label">Geography:</span>
+		<select class="input" id="Geography">
+			<option value="ProvincesTerritories">Provinces and Territories</option>
+			<option value="HealthRegions">Health Regions</option>
+			<option value="CensusMetropolitanAreas">Census Metropolitan Areas</option>
+		</select>
+	</div>
+	<div class="d-inline-block">
+		<span class="label">Indicator:</span>
+		<select class="input" id="Indicator">
+		</select>
+	</div>
+	<div class="d-inline-block">
+		<span class="label">Age Groups:</span>
+		<select class="input" id="AgeGroups">
+		</select>
+	</div>
+	<div class="d-inline-block">
+		<span class="label">Sex:</span>
+		<select class="input" id="Sex">
+		</select>
+	</div>
+	<div class="d-inline-block">
+		<span class="label">Crude Rates or ASR:</span>
+		<br>
+		<label class="switch">
+			<input class="input" type="checkbox" id="ASRorCrudeRates">
+			<span class="slider"><span id="ASR">ASR</span> <span id="CR">Crude Rates</span></span>
+		</label>
+	</div>
+	<div class="d-inline-block">
+		<span class="label">Ecumenes:</span>
+		<br>
+		<label class="switch">
+			<input class="input" type="checkbox" id="Ecumene">
+			<span class="slider"><span id="ASR">On</span> <span id="CR">Off</span></span>
+		</label>
+	</div>
+	<p id="parametersText" style="margin-left:50px"></p>
+
+	<span class="fas fa-info-circle">
+		Navigate the map by hovering over each area. Click an area to lock it and click again to
+		unlock it. Use Ctrl + Mouse Wheel to zoom in.
+	</span>
+	<div class="container">
+		<div id="legend">
+			<h4 id="legendTitle"><span class='parameters'>Obesity</span> prevalence (%)</h4>
+			<span>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="#006837" lowerBound="37.59" upperBound="100" class="legendColour">
+					</rect>
+				</svg>
+				<label>37.59% or more</label>
+				<br>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="#31a354" lowerBound="31.35" upperBound="37.59" class="legendColour">
+					</rect>
+				</svg>
+				<label>31.35% to 37.59%</label>
+				<br>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="#78c679" lowerBound="25.1" upperBound="31.34" class="legendColour">
+					</rect>
+				</svg>
+				<label>25.1% to 31.34%</label>
+				<br>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="#c2e699" lowerBound="18.86" upperBound="25.09" class="legendColour">
+					</rect>
+				</svg>
+				<label>18.86% to 25.09%</label>
+				<br>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="#ffffcc" lowerBound="0" upperBound="18.86" class="legendColour">
+					</rect>
+				</svg>
+				<label>18.85% or less</label>
+				<br>
+				<svg width="20" height="20">
+					<rect width="50" height="50" fill="white">
+					</rect>
+				</svg>
+				<label>Insufficient data</label>
+			</span>
+		</div>
+		<div id="descriptionDiv">
+			<span id="iconDiffrence"></span>
+			<p id="description"></p>
+		</div>
+		<div id="row" class="row">
+			<div id="mapContainer" class="col-lg-8 col-md-12 col-sm-12">
+			</div>
+			<div id="infoDiv" class="col-lg-4 col-md-5 col-sm-12">
+				<div id="significanceDiv">
+					<div id="selectedMap">
+						<svg id="selectedMapDisplay" height="100%" width="100%">
+						</svg>
+					</div>
+					<div>
+						<span id="graphParameters"></span>
+						<select class="input" id="SDOH"></select>
+					</div>
+					<svg class="barSvg" width="500px" height="300px" viewbox="0 20 500 300"></svg>
+					<details class="acc-group off">
+						<summary class="wb-toggle tgl-tab wb-init wb-toggle-inited">Notes</summary>
+						<p>This is data.</p>
+					</details>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<a id="downloadData" href="./src/csv/Indicator_by_geo_age_sex.csv" class="btn btn-success border-dark">Download Map
+		(.png)</a>
+	<br>
+	<details class="acc-group off">
+		<summary class="wb-toggle tgl-tab wb-init wb-toggle-inited">Table: <span id="tableTitle"></span></summary>
+		<div id="tableDiv"></div>
+		<a href="" class="btn border-dark"><u>Download Detailed Table</u></a>
+		<a href="" class="btn border-dark"><u>Copy Summary Table</u></a>
+	</details>
+	<div id="tableNotesDiv">
+		<span class="fas fa-info-circle tableNotes">
+		</span>
+		<span class="fas">Notes:</span>
+		<br>
+		<span class="fas"> Data source: </span><span id="dataSource"> Canadian Comunity Health Survey</span>
+	</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+ crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+ crossorigin="anonymous"></script>
+<script src="src/index.js"></script>
+
+</html>
