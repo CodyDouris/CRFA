@@ -1,157 +1,115 @@
-body {
-  font-family: Helvetica, Arial, Helvetica, sans-serif;
-  margin: 10px;
+main {
+    line-height: 1.45em;
+    font-size: 16px;
 }
-i {
-  font-size: 40px;
+
+path {
+    outline: none;
 }
-svg {
-  border: 1px solid #ddd;
+
+canvas {
+    display: none;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-td,
-th {
-  border: 1px solid #ebebeb;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #ebebeb;
-}
-span.label {
-  font-weight: bold;
-}
-select.input {
-  margin-top: 10px;
-  display: block;
-  width: 225px;
-}
-div.d-inline-block {
-  margin-left: 40px;
-}
-#dataSource {
-  font-size: 0.7em;
-}
-#ASR {
-  padding-left: 30px;
-}
-#infoDiv {
-  opacity: 0;
-  display: none;
-}
-#descriptionDiv {
-  opacity: 0;
-  display: none;
-}
-#CR {
-  padding-left: 30px;
-}
-#legend {
-  position: absolute;
-  z-index: 3;
-  font-size: 0.75em;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-}
+
 #legendTitle {
-  font-size: 1.5em;
+    font-size: 15px;
 }
+
+#graphDiv {
+    width: 100%;
+}
+
+#mapParagraphContainer {
+    display: flex;
+}
+
+#parametersText {
+    font-weight: bold;
+}
+
 #descriptionDiv {
-  position: relative;
-  float: right;
-  width: 25%;
-  font-size: 1.2em;
+    width: 100%;
 }
-#selectedMap {
-  display: inline-block;
+
+#CRText {
+    display: none;
 }
-#descriptionDiv {
-  display: inline-block;
+
+.clientHidden {
+    opacity: 0;
 }
-#tableTitle {
-  font-weight: normal;
+
+.clientLabel {
+    font-weight: bold;
 }
-#tableDiv {
-  overflow-y: auto;
+
+.input {
+    margin-top: 10px;
 }
-#tableNotesDiv {
-  background: lightblue;
-}
-.tableNotes {
-  color: blue;
-}
+
 .selectedArea {
-  border: 1px dashed black;
-  stroke: black;
-  opacity: 0.35;
-}
-.fa-info-circle {
-  font-size: 20px;
-}
-.fa-angle-up {
-  color: green;
-}
-.fa-angle-down {
-  color: red;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 34px;
-}
-.container {
-  margin-top: 10px;
-  margin-left: 0px;
-}
-.parameters {
-  font-weight: bold;
-  color: green;
-}
-.wb-toggle {
-  font-weight: bold;
-  border: 1px lightgray solid;
-  width: auto;
-}
-.btn {
-  margin-bottom: 10px;
-}
-/*Switch CSS*/
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    border: 1px dashed black;
+    opacity: 0.35;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 34px;
-  font-weight: bold;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 34px;
-  width: 100px;
-  background-color: black;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 34px;
+.downloadBtn {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 13px;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(100px);
-  -ms-transform: translateX(100px);
-  transform: translateX(100px);
+.notesFont {
+    font-size: 15px;
+}
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-info>:first-child:before {
+    color: #31708f;
+}
+
+.panel {
+    margin-top: 5px;
+}
+
+.paginationNav{
+    display: inline;
+}
+
+.areaName{
+    font-size: 18px;
+    color: green;
+}
+
+@media (max-width: 768px) {
+    #descriptionDiv {
+        font-size: 10px;
+    }
+
+    #graphParameters {
+        font-size: 10px;
+    }
+
+    #map {
+        height: 335px;
+    }
+
+    main {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 9px !important;
+    }
+    
+    .areaName {
+        font-size: 12px;
+    }
+
+}
+.dataTables_scrollHeadInner{
+    width: 100% !important;
 }
