@@ -1,0 +1,161 @@
+main {
+    line-height: 1.45em;
+    font-size: 16px;
+}
+
+path {
+    outline: none;
+}
+u{
+    cursor: pointer;
+}
+canvas {
+    display: none;
+}
+
+#legendTitle {
+    font-size: 15px;
+}
+
+#graphDiv {
+    width: 100%;
+}
+
+#mapParagraphContainer {
+    display: flex;
+}
+
+#parametersText {
+    font-weight: bold;
+}
+
+#descriptionDiv {
+    width: 100%;
+}
+
+#CRText {
+    display: none;
+}
+#suppressedNotes {
+    display: none;
+}
+#description {
+    /*height: 30px;*/
+}
+.clientHidden {
+    opacity: 0;
+}
+
+.clientLabel {
+    font-weight: bold;
+}
+
+.input {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.selectedArea {
+    border: 1px dashed black;
+    opacity: 0.35;
+}
+
+.downloadBtn {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 13px;
+}
+.mainNotes{
+    padding-left: 12px;
+}
+.notesFont {
+    font-size: 15px;
+}
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-info>:first-child:before {
+    color: #31708f;
+}
+
+.panel {
+    margin-top: 5px;
+}
+
+.paginationNav {
+    display: inline;
+}
+
+.areaName {
+    font-size: 18px;
+    color: green;
+}
+.subscriptFontSize {
+    font-size: 13px;
+}
+.popover {
+    font-size: 15px;
+}
+.barSvg{
+    font-weight: bold;
+}
+#infoDiv{
+    border-left: 1px solid #DDD;
+    padding-left: 20px;
+}
+#ageGroupSpan{
+    display:none;
+}
+.barSvg{
+    height: 385px;
+}
+.dataTables_scrollHeadInner {
+    width: 100% !important;
+}
+@media (max-width: 991px) {
+    #divider{
+        display: none;
+    }
+    .barSvg{
+        height: 510px;
+    }
+
+}
+@media (max-width: 768px) {
+    #divider{
+        display: none;
+    }
+    #descriptionDiv {
+        font-size: 9.8px;
+    }
+
+    #graphParameters {
+        font-size: 10px;
+    }
+
+    #map {
+        height: 335px;
+    }
+
+    main {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 9px !important;
+    }
+    
+    .areaName {
+        font-size: 12px;
+    }
+    .barSvg {
+        height: 385px;
+    }
+    #infoDiv {
+        border-left: none;
+        padding-left: none;
+}
+}
